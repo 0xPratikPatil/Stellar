@@ -1,27 +1,10 @@
 'use client'
 
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, PerspectiveCamera, Html } from '@react-three/drei'
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useRef } from 'react'
 import * as THREE from 'three'
-
-// Extend the default JSX namespace to include the custom elements
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      group: any;
-      mesh: any;
-      cylinderGeometry: any;
-      coneGeometry: any;
-      boxGeometry: any;
-      meshStandardMaterial: any;
-      ambientLight: any;
-      pointLight: any;
-      gridHelper: any;
-    }
-  }
-}
 
 function Rocket() {
   const rocketRef = useRef<THREE.Group>(null)
@@ -38,13 +21,13 @@ function Rocket() {
       {/* Rocket Body */}
       <mesh position={[0, 0, 0]}>
         <cylinderGeometry args={[0.5, 0.5, 4, 32]} />
-        <meshStandardMaterial color="hsl(var(--primary))" />
+        <meshStandardMaterial color="#ff0000" />
       </mesh>
       
       {/* Nose Cone */}
       <mesh position={[0, 2.5, 0]}>
         <coneGeometry args={[0.5, 1, 32]} />
-        <meshStandardMaterial color="hsl(var(--primary))" />
+        <meshStandardMaterial color="#ff0000" />
       </mesh>
       
       {/* Fins */}
@@ -55,7 +38,7 @@ function Rocket() {
           rotation={[0, (i * Math.PI) / 2, 0]}
         >
           <boxGeometry args={[0.1, 1, 1]} />
-          <meshStandardMaterial color="hsl(var(--primary))" />
+          <meshStandardMaterial color="#ff0000" />
         </mesh>
       ))}
     </group>
@@ -72,8 +55,7 @@ export default function RocketOrientation() {
       </CardHeader>
       <CardContent>
         <div className="h-[400px] bg-black/50">
-          <Canvas>
-            <PerspectiveCamera makeDefault position={[5, 5, 5]} />
+          <Canvas camera={{ position: [5, 5, 5] }}>
             <OrbitControls enableDamping />
             <ambientLight intensity={0.5} />
             <pointLight position={[10, 10, 10]} />
@@ -85,4 +67,3 @@ export default function RocketOrientation() {
     </Card>
   )
 }
-

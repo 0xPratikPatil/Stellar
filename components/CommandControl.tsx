@@ -47,7 +47,7 @@ export default function CommandControl() {
                 Execute
               </Button>
             </div>
-            <Progress value={task.progress} className="h-2 bg-primary/20" indicatorClassName="bg-primary" />
+            <Progress value={task.progress} className="h-2 bg-primary/20"/>
             <span className="text-xs text-primary/60">{task.progress}%</span>
           </div>
         ))}

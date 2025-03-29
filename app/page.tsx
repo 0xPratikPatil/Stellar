@@ -80,28 +80,26 @@ export default function RocketMonitoringSystem() {
       <Header missionName="Lotus" />
       
       <main className="flex-grow container mx-auto py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
-            <DndContext
-              sensors={sensors}
-              collisionDetection={closestCenter}
-              onDragEnd={handleDragEnd}
-            >
-              <SortableContext items={parameters} strategy={rectSortingStrategy}>
-                <TelemetryGrid parameters={parameters} telemetryData={telemetryData} />
-              </SortableContext>
-            </DndContext>
-            <div className="mt-6">
-              <MissionProgress />
-            </div>
+        <div className="grid grid-cols-1 gap-6">
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={handleDragEnd}
+          >
+            <SortableContext items={parameters} strategy={rectSortingStrategy}>
+              <TelemetryGrid parameters={parameters} telemetryData={telemetryData} />
+            </SortableContext>
+          </DndContext>
+          
+          <div className="mt-6">
+            <MissionProgress />
           </div>
-          <div className="space-y-6">
-            {/* <RocketOrientation /> */}
-            {/* <GPSMap latitude={gpsLocation.latitude} longitude={gpsLocation.longitude} /> */}
-            <TrajectoryCard />
-            <EventTracker />
-            <CommandControl />
-          </div>
+          
+          <RocketOrientation />
+          <GPSMap latitude={gpsLocation.latitude} longitude={gpsLocation.longitude} />
+          <TrajectoryCard />
+          <EventTracker />
+          <CommandControl />
         </div>
       </main>
 
