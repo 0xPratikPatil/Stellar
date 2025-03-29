@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stellar - Rocket Telemetry UI
 
-## Getting Started
+## 🚀 Overview
 
-First, run the development server:
+Stellar is a real-time rocket telemetry dashboard built with **Next.js**. It captures data from a **USB serial interface** and visualizes fundamental telemetry metrics, including altitude, velocity, temperature, pressure, gyroscope, accelerometer, and more. The UI provides an intuitive interface for monitoring rocket parameters during flight.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+-   📡 **Live Telemetry** – Displays real-time rocket data via USB serial.
+        
+-   📊 **Graphical Dashboard** – Interactive graphs for easy monitoring.
+    
+-   🌍 **GPS Location** – Tracks the rocket’s live position.
+    
+-   🎯 **Trajectory & Stage Tracking** – Monitors flight progression.
+    
+-   🎛 **3D Rocket Orientation** – Provides an interactive 3D view of the rocket’s attitude.
+    
+-   📈 **Mission Progress** – Displays mission status with progress tracking.
+    
+-   🔥 **Responsive UI** – Works on all screen sizes.
+    
+
+## 📸 Demo
+
+[![Watch the video](https://raw.githubusercontent.com/0xPratikPatil/Stellar/refs/heads/main/demo/stellar.png)](https://github.com/0xPratikPatil/Stellar/blob/main/demo/stellar-demo.mp4)
+
+## 🛠 Installation
+
+### Prerequisites
+
+-   Node.js & npm/yarn
+    
+-   USB-to-serial driver installed
+    
+-   RF module (e.g., LoRa) configured for telemetry
+    
+
+### Steps
+
+```sh
+# Clone the repository
+git clone https://github.com/0xPratikPatil/Stellar.git
+cd stellar
+
+# Install dependencies
+yarn install  # or bun install
+
+# Start the development server
+yarn dev  # or bun run dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📌 Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  Connect your rocket’s telemetry system to the **USB port**.
+    
+2.  Ensure that the **RF module** (e.g., LoRa) is transmitting data.
+    
+3.  Run the Stellar dashboard.
+    
+4.  Select the correct **serial port** in settings.
+    
+5.  Monitor real-time telemetry data.
+    
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📊 Data Metrics
 
-## Learn More
+Stellar provides real-time insights into:
 
-To learn more about Next.js, take a look at the following resources:
+-   **Altitude** (m)
+    
+-   **Velocity** (m/s)
+    
+-   **Temperature** (°C)
+    
+-   **Pressure** (Pa)
+    
+-   **Gyroscope** (°/s)
+    
+-   **Accelerometer** (m/s²)
+    
+-   **3D Rocket Orientation**
+    
+-   **Mission Progress**
+    
+-   **GPS Location**
+    
+-   **Trajectory & Stage Details**
+    
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏗 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-   **Frontend:** Next.js, React, Tailwind CSS
+    
+-   **Data Handling:** USB Serial Communication, RF Modules (LoRa, etc.)
+    
+-   **Visualization:** Recharts, Three.js (for 3D orientation)
+    
 
-## Deploy on Vercel
+## 📌 Roadmap
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   Implement cloud-based telemetry storage.
+    
+-   Support for multiple rockets.
+    
+-   Develop a mobile app version.
+        
+-   Configurable telemetry parser for different formats.
+    
+-   Additional UI customization options.
+    
+-   Offline mode for data analysis.
+    
+-   Alert notifications for anomalies.
+    
+-   API for external integrations.
+    
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+
+1.  Fork the repo.
+    
+2.  Create a new branch (`feature-name`).
+    
+3.  Commit your changes.
+    
+4.  Open a pull request.
+    
+
+## 🛡 License
+
+This project is licensed under the **MIT License**.
+
+----------
+
+Made with ❤️ by Stellar Team 🚀
